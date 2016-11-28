@@ -15,6 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".data.MyContentProvider"
+            android:authorities="com.example.ipsenspiegel.myprovider.data"
+            android:enabled="true"
+            android:exported="false"></provider>
     </application>
 
 </manifest>
