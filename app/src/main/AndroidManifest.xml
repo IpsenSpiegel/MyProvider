@@ -19,8 +19,8 @@
         <provider
             android:name=".data.MyContentProvider"
             android:authorities="com.example.ipsenspiegel.myprovider.data"
-            android:enabled="true"
-            android:exported="false"></provider>
+            android:enabled="true"/>
+            //android:exported="false"> per ferho public a altres apps
     </application>
 
 </manifest>

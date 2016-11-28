@@ -20,12 +20,6 @@ public class MyContentProvider extends ContentProvider {
     public MyContentProvider() {
     }
 
-    @Override
-    public int delete(Uri uri, String selection, String[] selectionArgs) {
-        // Implement this to handle requests to delete one or more rows.
-        throw new UnsupportedOperationException("Not yet implemented");
-    }
-
 
     @Override
     public Uri insert(Uri uri, ContentValues values) {
@@ -40,16 +34,24 @@ public class MyContentProvider extends ContentProvider {
     }
 
     @Override
+    public int delete(Uri uri, String selection, String[] selectionArgs) {
+        SQLiteDatabase db = this.myDatabaseHelper.getWritableDatabase();
+
+        return db.delete(paramsDb.TABLE_NAME, selection, selectionArgs);
+    }
+
+    @Override
     public boolean onCreate() {
-       this.myDatabaseHelper = new MyDatabaseHelper(this.getContext());
+        this.myDatabaseHelper = new MyDatabaseHelper(this.getContext());
         return true;
     }
 
     @Override
     public Cursor query(Uri uri, String[] projection, String selection,
                         String[] selectionArgs, String sortOrder) {
-        // TODO: Implement this to handle query requests from clients.
-        throw new UnsupportedOperationException("Not yet implemented");
+        SQLiteDatabase db = this.myDatabaseHelper.getReadableDatabase();
+        return db.query(paramsDb.TABLE_NAME, projection, selection, selectionArgs, null, null, sortOrder);
+
     }
 
     @Nullable
