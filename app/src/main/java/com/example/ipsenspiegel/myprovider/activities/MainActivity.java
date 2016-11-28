@@ -1,9 +1,11 @@
-package com.example.ipsenspiegel.myprovider;
+package com.example.ipsenspiegel.myprovider.activities;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+
+import com.example.ipsenspiegel.myprovider.R;
 
 import static android.R.attr.button;
 
