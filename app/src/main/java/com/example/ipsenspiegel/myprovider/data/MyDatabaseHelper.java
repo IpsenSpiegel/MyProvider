@@ -13,14 +13,14 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class MyDatabaseHelper extends SQLiteOpenHelper{
 
 
-    private static final String CREATE_DB_TABLE = "CREATE TABLE " + ParamsDb.TABLE_NAME + " ("
-            + ParamsDb._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
-            + ParamsDb.STUDENT_NAME+ " TEXT, "
-            + ParamsDb.STUDENT_AGE+ "INTEGER);";
+    private static final String CREATE_DB_TABLE = "CREATE TABLE " + paramsDb.TABLE_NAME + " ("
+            + paramsDb._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, "
+            + paramsDb.STUDENT_NAME+ " TEXT, "
+            + paramsDb.STUDENT_AGE+ " INTEGER);";
 
     //base de datos se crea en el constructor que se ejecuta una vez
     public MyDatabaseHelper(Context context) {
-        super(context, ParamsDb.DB_NAME, null, ParamsDb.DB_VERSION);
+        super(context, paramsDb.DB_NAME, null, paramsDb.DB_VERSION);
     }
 
     @Override

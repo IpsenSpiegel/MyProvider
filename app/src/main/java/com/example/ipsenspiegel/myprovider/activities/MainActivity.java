@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.ipsenspiegel.myprovider.R;
+import com.example.ipsenspiegel.myprovider.data.MyDatabaseHelper;
 
 import static android.R.attr.button;
 
@@ -29,6 +30,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View whichView) {
 
         if (whichView.getId()== R.id.btn_query_db){
+
+            MyDatabaseHelper dbHelper = new MyDatabaseHelper(this);
+            dbHelper.getWritableDatabase();
 
         }else if (whichView.getId()== R.id.btn_add_db){
 
